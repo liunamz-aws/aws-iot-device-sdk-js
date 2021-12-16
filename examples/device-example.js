@@ -60,11 +60,11 @@ function processTest(args) {
       count++;
 
       if (args.testMode === 1) {
-         device.publish('topic_2', JSON.stringify({
+         device.publish('topic_1', JSON.stringify({
             mode1Process: count
          }));
       } else {
-         device.publish('topic_1', JSON.stringify({
+         device.publish('topic_2', JSON.stringify({
             mode2Process: count
          }));
       }
@@ -73,7 +73,7 @@ function processTest(args) {
    //
    // Do a simple publish/subscribe demo based on the test-mode passed
    // in the command line arguments.  If test-mode is 1, subscribe to
-   // 'topic_1' and publish to 'topic_2'; otherwise vice versa.  Publish
+   // 'topic_1' and publish to 'topic_1'; otherwise vice versa.  Publish
    // a message every four seconds.
    //
    device
